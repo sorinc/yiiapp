@@ -1,0 +1,91 @@
+2015/01/06 15:23:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiiapp.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2015/01/06 15:31:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiiapp.project' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `project`.
+in D:\xampp\htdocs\yiiapp\index.php (13)
+2015/01/06 16:39:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_project' already exists. The SQL statement executed was: CREATE TABLE `tbl_project` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`description` text NOT NULL,
+	`create_time` datetime DEFAULT NULL,
+	`create_user_id` int(11) DEFAULT NULL,
+	`update_time` datetime DEFAULT NULL,
+	`update_user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB.
+2015/01/06 16:39:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_project' already exists. The SQL statement executed was: CREATE TABLE `tbl_project` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`description` text NOT NULL,
+	`create_time` datetime DEFAULT NULL,
+	`create_user_id` int(11) DEFAULT NULL,
+	`update_time` datetime DEFAULT NULL,
+	`update_user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB' in D:\xampp\htdocs\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\yii-master\framework\db\CDbCommand.php(1352): CDbCommand->execute()
+#1 D:\xampp\htdocs\yii-master\framework\db\CDbMigration.php(250): CDbCommand->createTable('tbl_project', Array, 'ENGINE=InnoDB')
+#2 D:\xampp\htdocs\yiiapp\protected\migrations\m150106_153833_create_project_table.php(5): CDbMigration->createTable('tbl_project', Array, 'ENGINE=InnoDB')
+#3 D:\xampp\htdocs\yii-master\framework\cli\commands\MigrateCommand.php(415): m150106_153833_create_project_table->up()
+#4 D:\xampp\htdocs\yii-master\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp('m150106_153833_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 D:\xampp\htdocs\yii-master\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\xampp\htdocs\yii-master\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\xampp\htdocs\yii-master\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\xampp\htdocs\yii-master\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\xampp\htdocs\yii-master\framework\yiic.php(33): CApplication->run()
+#11 D:\xampp\htdocs\yiiapp\protected\yiic.php(7): require_once('D:\\xampp\\htdocs...')
+#12 {main}
+---
+2015/01/06 16:39:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_project' already exists. The SQL statement executed was: CREATE TABLE `tbl_project` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`description` text NOT NULL,
+	`create_time` datetime DEFAULT NULL,
+	`create_user_id` int(11) DEFAULT NULL,
+	`update_time` datetime DEFAULT NULL,
+	`update_user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB.
+2015/01/06 16:39:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_project' already exists. The SQL statement executed was: CREATE TABLE `tbl_project` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`description` text NOT NULL,
+	`create_time` datetime DEFAULT NULL,
+	`create_user_id` int(11) DEFAULT NULL,
+	`update_time` datetime DEFAULT NULL,
+	`update_user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB' in D:\xampp\htdocs\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\yii-master\framework\db\CDbCommand.php(1352): CDbCommand->execute()
+#1 D:\xampp\htdocs\yii-master\framework\db\CDbMigration.php(250): CDbCommand->createTable('tbl_project', Array, 'ENGINE=InnoDB')
+#2 D:\xampp\htdocs\yiiapp\protected\migrations\m150106_153833_create_project_table.php(5): CDbMigration->createTable('tbl_project', Array, 'ENGINE=InnoDB')
+#3 D:\xampp\htdocs\yii-master\framework\cli\commands\MigrateCommand.php(415): m150106_153833_create_project_table->up()
+#4 D:\xampp\htdocs\yii-master\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp('m150106_153833_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 D:\xampp\htdocs\yii-master\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\xampp\htdocs\yii-master\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\xampp\htdocs\yii-master\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\xampp\htdocs\yii-master\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\xampp\htdocs\yii-master\framework\yiic.php(33): CApplication->run()
+#11 D:\xampp\htdocs\yiiapp\protected\yiic.php(7): require_once('D:\\xampp\\htdocs...')
+#12 {main}
+---
+2015/01/06 16:51:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1072 Key column 'project_
+id' doesn't exist in table. The SQL statement executed was: ALTER TABLE `tbl_issue` ADD CONSTRAINT `fk_issue_project` FOREIGN KEY (`project_
+id`) REFERENCES `tbl_project` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT.
+2015/01/06 16:51:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1072 Key column 'project_
+id' doesn't exist in table. The SQL statement executed was: ALTER TABLE `tbl_issue` ADD CONSTRAINT `fk_issue_project` FOREIGN KEY (`project_
+id`) REFERENCES `tbl_project` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT' in D:\xampp\htdocs\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\yii-master\framework\db\CDbCommand.php(1463): CDbCommand->execute()
+#1 D:\xampp\htdocs\yii-master\framework\db\CDbMigration.php(366): CDbCommand->addForeignKey('fk_issue_projec...', 'tbl_issue', 'project_\nid', 'tbl_project', 'id', 'CASCADE', 'RESTRICT')
+#2 D:\xampp\htdocs\yiiapp\protected\migrations\m150106_155040_create_issue_user_and_assignment_tables.php(45): CDbMigration->addForeignKey('fk_issue_projec...', 'tbl_issue', 'project_\nid', 'tbl_project', 'id', 'CASCADE', 'RESTRICT')
+#3 D:\xampp\htdocs\yii-master\framework\cli\commands\MigrateCommand.php(415): m150106_155040_create_issue_user_and_assignment_tables->up()
+#4 D:\xampp\htdocs\yii-master\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp('m150106_155040_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 D:\xampp\htdocs\yii-master\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\xampp\htdocs\yii-master\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\xampp\htdocs\yii-master\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\xampp\htdocs\yii-master\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\xampp\htdocs\yii-master\framework\yiic.php(33): CApplication->run()
+#11 D:\xampp\htdocs\yiiapp\protected\yiic.php(7): require_once('D:\\xampp\\htdocs...')
+#12 {main}
+---
+2015/01/06 16:59:11 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiiapp.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
