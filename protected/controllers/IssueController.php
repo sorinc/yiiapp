@@ -20,7 +20,7 @@ class IssueController extends Controller {
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
-			'projectContext + create', //check to ensure valid project context
+			'projectContext + create index admin', //perform a check to ensure valid project context
 		);
 	}
 
@@ -133,8 +133,15 @@ class IssueController extends Controller {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Issue');
-		$this -> render('index', array('dataProvider' => $dataProvider, ));
+		$dataProvider = new CActiveDataProvider('Issue', array('criteria' => array(
+				'condition' => 'project_id=:projectId',
+				'params' => array(':projectId' => $this -> _project -> id),
+			), ));
+
+		$this -> render('index', array(
+			'dataProvider' => $dataProvider,
+			'pid' => $_GET['pid'],
+		));
 	}
 
 	/**
@@ -146,6 +153,8 @@ class IssueController extends Controller {
 		// clear any default values
 		if (isset($_GET['Issue']))
 			$model -> attributes = $_GET['Issue'];
+
+		$model -> project_id = $this -> _project -> id;
 
 		$this -> render('admin', array('model' => $model, ));
 	}
