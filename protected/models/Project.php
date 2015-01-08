@@ -12,7 +12,7 @@
  * @property string $update_time
  * @property integer $update_user_id
  */
-class Project extends CActiveRecord {
+class Project extends YiiAppActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
@@ -30,11 +30,6 @@ class Project extends CActiveRecord {
 			array(
 				'name, description',
 				'required'
-			),
-			array(
-				'create_user_id, update_user_id',
-				'numerical',
-				'integerOnly' => true
 			),
 			array(
 				'name',

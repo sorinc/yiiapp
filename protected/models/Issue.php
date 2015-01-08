@@ -22,7 +22,7 @@
  * @property User $owner
  * @property Project $project
  */
-class Issue extends CActiveRecord {
+class Issue extends YiiAppActiveRecord {
 
 	const TYPE_BUG = 0;
 	const TYPE_FEATURE = 1;
@@ -50,7 +50,7 @@ class Issue extends CActiveRecord {
 				'required'
 			),
 			array(
-				'project_id, type_id, status_id, owner_id, requester_id, create_user_id, update_user_id',
+				'project_id, type_id, status_id, owner_id, requester_id,',
 				'numerical',
 				'integerOnly' => true
 			),
@@ -60,7 +60,7 @@ class Issue extends CActiveRecord {
 				'max' => 255
 			),
 			array(
-				'description, create_time, update_time',
+				'description,',
 				'safe'
 			),
 			// The following rule is used by search().

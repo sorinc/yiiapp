@@ -133,6 +133,11 @@ class IssueController extends Controller {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
+
+		/**
+		 * Display Issues for selected project only
+		 */
+
 		$dataProvider = new CActiveDataProvider('Issue', array('criteria' => array(
 				'condition' => 'project_id=:projectId',
 				'params' => array(':projectId' => $this -> _project -> id),
